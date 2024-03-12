@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button mat-raised-button color="primary" class="mb-12" (click)="showNewCertificateForm()">
+        {{showNewCertificate ? 'Назад' : 'Додати'}}
+      </button>
+      <div class="certificates">
+        <div *ngFor="let item of certificates; let index = index"
+             [ngClass]="{active: activeCertificateIndex === index}"
+             class="certificates-item text-ellipsis" (click)="setActive(item, index)">
+          {{item.commonName}}
+        </div>
+      </div>
+
+    </div>
+    <div class="col">
+      <ng-container *ngIf="activeCertificate || showNewCertificate">
+        <app-certificate-info *ngIf="activeCertificate && !showNewCertificate"
+                              [activeCertificate]="activeCertificate"></app-certificate-info>
+        <app-add-certificate *ngIf="showNewCertificate"
+                             (onSaveCertificate)="addCertificate($event)"></app-add-certificate>
+      </ng-container>
+    </div>
+  </div>
+</div>

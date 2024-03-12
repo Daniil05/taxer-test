@@ -1,0 +1,8 @@
+<ngx-file-drop [multiple]="isMultiple" (onFileDrop)="loadFile($event)">
+  <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+    <div>
+      Перетягніть файл сертифікату сюди, або
+    </div>
+    <button mat-raised-button color="primary" (click)="openFileSelector()">Виберіть через стандартний діалог</button>
+  </ng-template>
+</ngx-file-drop>

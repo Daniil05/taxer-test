@@ -1,0 +1,29 @@
+:host {
+  border: 1px dotted #673ab7;
+  display: block;
+  height: 100%;
+
+  ::ng-deep {
+    ngx-file-drop {
+      height: 100%;
+      display: block;
+    }
+
+    .ngx-file-drop__drop-zone {
+      border: none !important;
+      padding: 40px;
+      color: #673ab7;
+      border-radius: 10px !important;
+      height: 100% !important;
+      display: flex;
+      align-items: center;
+    }
+
+    .ngx-file-drop__content {
+      color: inherit !important;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+  }
+}
