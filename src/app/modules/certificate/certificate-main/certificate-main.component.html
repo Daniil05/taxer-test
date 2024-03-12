@@ -4,7 +4,7 @@
       <button mat-raised-button color="primary" class="mb-12" (click)="showNewCertificateForm()">
         {{showNewCertificate ? 'Назад' : 'Додати'}}
       </button>
-      <div class="certificates">
+      <div class="certificates" *ngIf="certificates.length; else noCertificates">
         <div *ngFor="let item of certificates; let index = index"
              [ngClass]="{active: activeCertificateIndex === index}"
              class="certificates-item text-ellipsis" (click)="setActive(item, index)">
@@ -23,3 +23,8 @@
     </div>
   </div>
 </div>
+<ng-template #noCertificates>
+  <div>
+    Нема жодного сертифікату
+  </div>
+</ng-template>
